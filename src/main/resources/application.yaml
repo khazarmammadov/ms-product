@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: ms-product
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/product_db
+    username: dbs
+    password: dbs
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    open-in-view: false
+
+  config:
+    import: configserver:http://localhost:8888
+
+#---------------------------------------------------------server
+
+server:
+  port: 8080
+
+#---------------------------------------------------------zipkin
+
+management:
+  zipkin:
+    tracing:
+      read-timeout: 1

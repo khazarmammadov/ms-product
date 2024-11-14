@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  redis:
+    image: redis:latest
+    environment:
+      - REDIS_PASSWORD=redisPassword
+    container_name: redis_service
+    ports:
+      - "6379:6379"

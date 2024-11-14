@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=ms_dbs
+      - POSTGRES_USER=dbs
+      - POSTGRES_PASSWORD=dbs
+    container_name: ms
+    ports:
+      - "5432:5432"
